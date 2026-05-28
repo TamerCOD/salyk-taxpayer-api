@@ -29,7 +29,7 @@ except Exception:
 
 
 def json_utf8(data, status=200):
-    """Возвращает JSON-ответ с поддержкой кириллицы (без \u-кодов)."""
+    """Возвращает JSON-ответ с поддержкой кириллицы (без кодов u-escape)."""
     return app.response_class(
         response=json.dumps(data, ensure_ascii=False),
         status=status,
